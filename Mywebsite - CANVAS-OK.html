@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EAmaurino</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Keywords" content="Your keywords here...">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="websitestyle.css" type="text/css">
+
+</head>
+
+<body>
+    <div class="header">
+
+        <!--1--><img alt="background" src="wallpaperflare.com_wallpaper (5x).jpg" width="100%" height="650px" id="deco">
+        <!--1--><img alt="background" src="Ea_maurino logo.png" width="75px" height="70px" id="stamp">
+
+        <!--2-->
+        <div class="a">
+            <div class="canvas-element">
+                <canvas id="myCanvas" width="8000" height="600" style="opacity:0.6;z-index: -2;">
+        Your browser does not support the HTML canvas tag.</canvas>
+
+                <script>
+                    var c = document.getElementById("myCanvas");
+                    var ctx = c.getContext("2d");
+                    // Create gradient
+                    var grd = ctx.createLinearGradient(500, 200, 100, 0);
+                    grd.addColorStop(0, "#01233f");
+                    grd.addColorStop(1, "#e33e19");
+                    // Fill with gradient
+                    ctx.fillStyle = grd;
+                    ctx.fillRect(0, 0, 8000, 400);
+                </script>
+            </div>
+
+
+            <h1 id="titletxt">La Nouvelle <br> Méthode<br>de mandarin</h1>
+            <div id="author">
+                avec <cite>EA Maurino</cite>
+            </div>
+
+        </div>
+
+        <!--3-->
+        <div class="b">
+
+        </div>
+
+        <!--4-->
+        <div class="c">
+            <ul>
+                <li><a href="# "><i class="fas fa-home" style="font-size: 24px;padding-right: 3px;"></i>Acceuil</a></Home>
+                    <li><a href="# "><i class="fas fa-globe-asia" style="font-size: 14px;padding-right: 3px;"></i>Chinois</a></li>
+                    <li><a href="# "><i class="fas fa-film" style="font-size: 14px;padding-right: 3px;"></i>Multimédia</a></li>
+                    <li><a href="# "><i class="fas fa-coffee" style="font-size: 14px;padding-right: 3px;"></i>Outils Linguistiques</a></li>
+                    <li><a href="# "><i class="fas fa-campground" style="font-size: 14px;padding-right: 3px;"></i>Club</a></li>
+                    <li><a href="# "><i class="fas fa-folder" style="font-size: 14px;padding-right: 3px;"></i>Références</a></li>
+                    <li><a href="# "><i class="fas fa-shopping-basket" style="font-size: 14px;padding-right: 3px;"></i>EA-Tsena</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

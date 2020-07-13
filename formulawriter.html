@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head charset="utf-8">
+        <title>Excel formula writing tool</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                display: flex;
+                justify-content: center;
+            }
+            
+            div {
+                position: relative;
+                top: 100px;
+            }
+            
+            .input {
+                display: block;
+                width: 300px;
+            }
+            
+            .output {
+                display: block;
+                width: 400px;
+                height: 300px;
+                background-color: wheat;
+                border: 0.5px solid burlywood;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="input" id="_input">
+            <form>
+                <label for="_colonne">Nom de colonne en lettre"A-Z:"</label><br>
+                <input type="text" id="_colonne" name="cln"><br>
+                <label for="_lgndeb">Ligne deb_en chiffre:</label><br>
+                <input type="number" id="_lgndeb" name="deb"><br>
+                <label for="_lgnfin">Ligne fin_en chiffre:</label><br>
+                <input type="number" id="_lgnfin" name="fin">
+                <button type="button" onclick="phone()">Generate</button>
+            </form>
+        </div>
+        <div class="output" id="_output">
+            <p id="_aaaa"></p>
+        </div>
+
+        <script>
+            var c;
+            var a = {
+                type: "huawei",
+                age: "P20",
+                parent: "Pro"
+            };
+            var b = document.querySelector('input').value;
+            c = a.type + " " + a.age + a.parent + " " + b;
+
+            function phone() {
+                document.getElementById('_aaaa').innerHTML = c;
+            }
+        </script>
+    </body>
+
+</html>
