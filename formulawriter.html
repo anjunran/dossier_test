@@ -10,16 +10,22 @@
                 padding: 0;
                 margin: 0;
                 box-sizing: border-box;
+                #border: 1px solid black;
             }
             
             body {
                 display: flex;
                 justify-content: center;
+                background-color: wheat;
             }
             
             div {
                 position: relative;
                 top: 100px;
+            }
+            
+            #_aaaa {
+                word-wrap: break-word;
             }
             
             .input {
@@ -48,6 +54,14 @@
                 <label for="_lgnfin">Ligne fin_en chiffre:</label><br>
                 <input type="number" id="_lgnfin" name="fin">
                 <button type="button" onclick="phone()">Generate</button>
+                <label for="_colonne">Colonne :</label><br>
+                <input type="text" id="_colonne" name="cln" placeholder="A-Z"><br>
+                <label for="_lgndeb">Ligne de :</label><br>
+                <input type="number" id="_lgndeb" name="deb" placeholder="number"><br>
+                <label for="_lgnfin">à :</label><br>
+                <input type="number" id="_lgnfin" name="fin" placeholder="number">
+                <button type="button" onclick="generate_string(document.getElementById('_colonne').value,document.getElementById('_lgndeb').value,document.getElementById('_lgnfin').value)">Generate</button>
+                <button type="button" onclick="reset();document.getElementById('_aaaa').innerHTML=''">Clear</button>
             </form>
         </div>
         <div class="output" id="_output">
@@ -69,5 +83,17 @@
             }
         </script>
     </body>
+    <script>
+        function generate_string(col, deb, fin) {
+            var text = "";
+            var i;
+            for (i = deb; i < (fin + 1) / 10; i++) {
+                text += col + i + ",";
+
+            }
+            document.getElementById('_aaaa').innerHTML = text;
+
+        }
+    </script>
 
 </html>
