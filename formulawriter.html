@@ -47,13 +47,6 @@
 
         <div class="input" id="_input">
             <form>
-                <label for="_colonne">Nom de colonne en lettre"A-Z:"</label><br>
-                <input type="text" id="_colonne" name="cln"><br>
-                <label for="_lgndeb">Ligne deb_en chiffre:</label><br>
-                <input type="number" id="_lgndeb" name="deb"><br>
-                <label for="_lgnfin">Ligne fin_en chiffre:</label><br>
-                <input type="number" id="_lgnfin" name="fin">
-                <button type="button" onclick="phone()">Generate</button>
                 <label for="_colonne">Colonne :</label><br>
                 <input type="text" id="_colonne" name="cln" placeholder="A-Z"><br>
                 <label for="_lgndeb">Ligne de :</label><br>
@@ -68,20 +61,7 @@
             <p id="_aaaa"></p>
         </div>
 
-        <script>
-            var c;
-            var a = {
-                type: "huawei",
-                age: "P20",
-                parent: "Pro"
-            };
-            var b = document.querySelector('input').value;
-            c = a.type + " " + a.age + a.parent + " " + b;
-
-            function phone() {
-                document.getElementById('_aaaa').innerHTML = c;
-            }
-        </script>
+       
     </body>
     <script>
         function generate_string(col, deb, fin) {
