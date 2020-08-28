@@ -2,202 +2,77 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link href="css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="jscript.js"></script>
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="container">
-      <!--id setup-->
-      <nav class="navbar navbar-expand-xs navbar-light">
-        <div class="input-group mb-3 userNm">
-            <input onload="Event.preventDefault()" id="userName" style="font-size: 12px; border-top-left-radius: 5rem;border-bottom-left-radius: 5rem; box-shadow: inset 7px 0px 8px -4px #ff8c7f; border:none;" type="text" class="form-control" placeholder="Enter your Chat-ID..." aria-label="Recipient's username" aria-describedby="button-addon2">
-            <div class="input-group-append ">
-              <button type="submit" onsubmit="setUser()" style="font-size: 12px; border-top-right-radius: 5rem;border-bottom-right-radius: 5rem; border:none; height:2.1rem; box-shadow: inset -7px 0px 8px -4px #ff8c7f;" class="btn btn-outline-secondary bg-light" type="button" id="button-addon2">ok</button>
-            </div>
-          </div>
-      </nav>
-        <section class="message" id="message">
-          <!--message body-->
-          <div id="receivedBulle"></div>
-          <div id="sentBulle"></div>
-        </section>
-        <!--submit message form-->
-        <div class="text">
-          <!--submit message form-->
-              <div class="form-group msgedit">
-                <input id="mSg" style="background-color:none; font-size: 12px; border-top-left-radius: 5rem;border-bottom-left-radius: 5rem;border-top-right-radius: 5rem;border-bottom-right-radius: 5rem; box-shadow: inset 2px 0px 8px -4px #ff8c7f; border:none;" type="text" class="form-control" placeholder="Message..." aria-label="Recipient's username" aria-describedby="button-addon2">
-              <div class="sendButton">
-                <button onclick="sendMessage(); location.reload(); reset()" style="font-size: 0.9em; box-shadow: 0px 10px 15px -4px rgba(0,0,0,0.17); border:none; color: #ff867a;" type="submit" value="Submit" class="btn btn-outline btn-ms"><i class="fas fa-paper-plane fusee"></i></button>
-              </div>
-              </div>
-        </div>
-    </div>
-
-<script>
-          //var sentElmt = document.getElementById("sentBulle");
-          //var receivedElmt = document.getElementById("receivedBulle");
-          //var x = "I sent this message";
-          //var y = "Someone sent me this message";
-          //var avatar = "<i class='fas fa-user-circle icn'></i>";
-          //sentElmt.innerHTML = avatar + "<p class='sentElmt'>" + x + "</p>";
-          //receivedElmt.innerHTML = avatar + "<p class='receivedElmt'>" + y + "</p>";
-          var buttonIcon = document.getElementById('button-addon2');
-          var inputNameValue = document.getElementById('userName');
-          if (inputNameValue.value!=null) {
-
-          } else {
-
-          }
-</script>
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-
-<div class="intro" id="blabla" style="background-color:black; color:white; height:10rem; width:100%; padding:0.5rem;">
-
-</div>
-
-  </body>
-
-            <!-- The core Firebase JS SDK is always required and must be listed first -->
-            <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
-            <!--firebase database as randomchat-->
-            <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
-
-            <!-- TODO: Add SDKs for Firebase products that you want to use
-                 https://firebase.google.com/docs/web/setup#available-libraries -->
-            <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
-
-<script async>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBhLO5WSeUryj1p0oKBpo6LeHlE1mwREnM",
-    authDomain: "randomchat-9b457.firebaseapp.com",
-    databaseURL: "https://randomchat-9b457.firebaseio.com",
-    projectId: "randomchat-9b457",
-    storageBucket: "randomchat-9b457.appspot.com",
-    messagingSenderId: "513152372962",
-    appId: "1:513152372962:web:349dd3dc812a62d145cebb",
-    measurementId: "G-B66K4Q7470"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-
-                //1) Send message function: -- Envoi des messages
-                      function sendMessage(){
-                         //Event.preventDefault();
-                          //get message
-                          var hafatra = document.getElementById('mSg').value;
-                          var uSr = document.getElementById('userName').value;
-                          //update firebase dtbase
-                          var db = firebase.database();
-                          var messages = db.ref('messages');
-
-                          messages.push().set({
-                            "message": hafatra,
-                            "user" : uSr,
-                          })
-
-                      }
-
-                //2) Read message block: -- Lecture des messages
-
-                //Part 1: DISPLAY OTHER MEMBERS MESSAGES
-                //Create references: firebase raw DATA
-                var dbRefObject = firebase.database();
-                var datas = dbRefObject.ref().child('messages');
-
-                //Arrange message inside Array
-                datas.on('value',snap => {
-                const reg = snap.val();
-                var arr = Object.values(reg);
-
-                //create a filter field for the arr table
-                arr.map(function(item, index) {
-                  if (item.user=="Andry") {
-                    item.show = false;
-                  } else {
-                    item.show = true;
-                  };
-                });
-
-                //Create new array filter by value of show is true
-                let filtered_A = [];
-                for (var i = 0; i < arr.length; i++) {
-                  if (arr[i].show==true){
-                    filtered_A.push(arr[i]);
-                    filtered_A.reverse();
-                  }
-                }
-                //console.log(filtered_A);
-                //New arrayobj of filtered by value of show (true)
-                filtered_A.map(function(item, index){
-                //console.log(item.user,item.message);
-
-                const receivedElmt = document.getElementById("message");
-                const date = new Date();
-                let incomingMsg = {
-                  userNm: item.user,
-                  incText: item.message,
-                  timestamp: date.getTime(),
-                }
-                  //incomingMsg.sort(function (a, b) {return a.timestamp - b.timestamp});
-                  console.log(typeof incomingMsg);
-                const Content = "<p class='receivedElmt'>"  +  incomingMsg.incText  + "</p>";
-                const Sender = incomingMsg.userNm;
-                const avatar = "<i class='fas fa-user-circle icn'></i>";
-                const displayElmt = "<div class='receivedMsg w3-animate-left'>" + avatar + Content + "<span>" +  Sender + "</span>" + "</div>" ;
-                //Event.preventDefault();
-                //console.log(displayElmt);
-                  receivedElmt.innerHTML += displayElmt;
-              })
-
-              //Part 2: DISPLAY MY MESSAGES
-              let filtered_B = [];
-              for (var i = 0; i < arr.length; i++) {
-                if (arr[i].show==false){
-                  filtered_B.push(arr[i]);
-                  filtered_B.reverse();
-                }
-              }
-
-              //console.log(JSON.stringify(filtered_B));
-              //New arrayobj of filtered by value of show (true)
-            filtered_B.map(function(item, index){
-              //console.log(item.user,item.message);
-            const sentElmt = document.getElementById("message");
-            const date = new Date();
-            let outGoingMsg = {
-              userNm: item.user,
-              incText: item.message,
-              timestamp: date.getTime(),
+    <head charset="utf-8">
+        <title>Excel formula writing tool</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                #border: 1px solid black;
             }
-              //outGoingMsg.sort(function (a, b) {return a.timestamp - b.timestamp});
-                console.log(typeof outGoingMsg);
-              const _Content = "<p class='sentElmt'>"  +  outGoingMsg.incText  + "</p>";
-              const _Sender = outGoingMsg.userNm;
-              const _avatar = "<i class='fas fa-user-circle icn'></i>";
-              const _displayElmt = "<div class='sentMsg w3-animate-left'>" + _avatar + _Content + "<span>" +  _Sender + "</span>" + "</div>" ;
-              //Event.preventDefault();
-              //console.log(displayElmt);
-                sentElmt.innerHTML += _displayElmt;
-            })
+            
+            body {
+                display: flex;
+                justify-content: center;
+                background-color: wheat;
+            }
+            
+            div {
+                position: relative;
+                top: 100px;
+            }
+            
+            #_aaaa {
+                word-wrap: break-word;
+            }
+            
+            .input {
+                display: block;
+                width: 300px;
+            }
+            
+            .output {
+                display: block;
+                width: 400px;
+                height: 300px;
+                border: 0.5px solid burlywood;
+            }
+        </style>
+    </head>
 
-                })
-</script>
+    <body>
+
+        <div class="input" id="_input">
+            <form>
+                <label for="_colonne">Colonne :</label><br>
+                <input type="text" id="_colonne" name="cln" placeholder="A-Z"><br>
+                <label for="_lgndeb">Ligne de :</label><br>
+                <input type="number" id="_lgndeb" name="deb" placeholder="number"><br>
+                <label for="_lgnfin">à :</label><br>
+                <input type="number" id="_lgnfin" name="fin" placeholder="number">
+                <button type="button" onclick="generate_string(document.getElementById('_colonne').value,document.getElementById('_lgndeb').value,document.getElementById('_lgnfin').value)">Generate</button>
+                <button type="button" onclick="reset();document.getElementById('_aaaa').innerHTML=''">Clear</button>
+            </form>
+        </div>
+        <div class="output" id="_output">
+            <p id="_aaaa"></p>
+        </div>
+
+
+    </body>
+    <script>
+        function generate_string(col, deb, fin) {
+            var text = "";
+            var i;
+            for (i = deb; i < (fin + 1) / 10; i++) {
+                text += col + i + ",";
+
+            }
+            document.getElementById('_aaaa').innerHTML = text;
+
+        }
+    </script>
 
 </html>
